@@ -1,6 +1,7 @@
  
 
- # parcel ( https://parceljs.org/ )
+ # parcel 
+ ( https://parceljs.org/ )
  1.Created Dev Build
  2.Created Local server
  3.Automatically Refreshing page & update the code (HMR - Hot module Replacement)
@@ -25,7 +26,8 @@
         Remove the entry point
         it will automatically generate entry point as well production ready code and file.
 
-# browerslist ( https://github.com/browserslist/browserslist or )
+# browerslist 
+( https://github.com/browserslist/browserslist or )
     how to make old or latest browser for app compatible ?
     Ans - you have to tell your browser what all browser should your app be supported in.
         - we will create browserslist in package.json file
@@ -34,7 +36,7 @@
         - you will configure it inside your package.json file 
         - in you package.json you have to add browserslist  
         - browserslist take array of list  
-
+<!-- 
   "browserslist": [
     "defaults and fully supports es6-module"  ,
     "last 2 chrome versions"
@@ -44,7 +46,7 @@
 
   "browserslist": [
     "defaults"
-  ]
+  ] -->
 
 
 https://drive.google.com/file/d/1Ermc-krhwXMt5W3JsqUISyP8PnnZ3C8a/view?usp=drive_link
@@ -92,8 +94,8 @@ ans. jsx (transpiled or convert into )==> React.createElement (created the ) ==>
 1. Functional comp
 - function name should in CapitalLetter HeadingComponent
 - functional component is a normal js function which return some piece of code/JSX element and react element
-
-const HeadingComponent = () => {
+ 
+<!-- const HeadingComponent = () => {
     return <h1>Hello JSX</h1>;
 }
 const HeadingComponent = () => {
@@ -102,7 +104,7 @@ const HeadingComponent = () => {
             <h1>Hello JSX</h1>;
         <>
     ) 
-}
+} -->
 Q. how to render functional component inside the root?
 Q. what is component composition ?
 ans. put one component inside the another component or one component  can refers to other component.
