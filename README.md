@@ -113,6 +113,50 @@ ans. put one component inside the another component or one component  can refers
 - u can put react element inside component ---- u can put react element inside other react element 
 
 
+# Two Type of import export
+1. Default export/import
+
+export default Component;
+import Component from "path"
+
+2. Named export/import
+
+export const Component;
+import {Component} from "path"
+
+# React Hook
+- normal js utility function 
+- 2 imp hooks 
+    - useState() - superpowerfull react variable
+    - useEffect()
+
+- normal js function which is utility function.
+- useState give powerful variable inside the react
+- why its powerful -> its bcoz react keep eye on it or track on it.
+- whenever the variable is update. React will trigger it "diff algorithm". it will finds out the diff'n btwn virtual dom
+- and it will automatically update the UI
+- it keeps UI layer & data layer sync & that is core algorithm of react js
+
+### Reconciliation 
+Q how react works behind the scence?
+A. React uses Recondiliation algorithm.( it is also know as React Fiber)
+
+### Virtual DOM
+- VDOM is a programming concept of virtual
+  - Representaion of a UI is kept in memory and synced with the "real/regular" DOM by a library such as ReactDOM
+  - this process is call Reconciliation.
+- its representation of regular dom
+- react create virtual dom - it is not regular/actual dom - it is only representation of regular dom
+##### Diff Algorithm
+- it find the diff'n btwn previous virtual dom to new virtual dom. - then it will update the regular/actual dom
+- virtual dom is kind of like a object representation the HTML
+- React does efficient DOM Manipulating DOM. (How ?) bcoz it has virtual dom
+- react fiber is new reconciliation engine in React 16. - its main goal is to enable incremental rendering of virtual dom or new way of finding the div & update the UI(DOM) (https://github.com/acdlite/react-fiber-architecture)
+
+### useState()
+- whenever the state variable update - react re-render the component
+
+
 -------------------------
 # vs extension 
 1. pretier code 

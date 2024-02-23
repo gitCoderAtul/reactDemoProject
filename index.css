@@ -14,6 +14,13 @@ font-family: "Roboto", sans-serif; */
  .res-card h3{margin-top: 10px; margin-bottom: 5px; padding: 0;}
  .res-card h4{margin-top: 5px; margin-bottom: 5px; padding: 0;}
 
+ .filter-btn{ cursor: pointer; color: white;     background-color: #ce7625;
+    border: 1px solid #e8e8e8;
+    padding: 8px 15px;
+    border-radius: 15px;}
+
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) { 
     .body{max-width: 100%; margin: auto;}

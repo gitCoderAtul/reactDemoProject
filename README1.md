@@ -7,4 +7,5 @@
     - restaurant container
         - restaurant card (image,name,rating,cuisine,delivery time)
 3. Footer
-    - copyright, links, address, contact etc.        
+    - copyright, links, address, contact etc.       
+ 
