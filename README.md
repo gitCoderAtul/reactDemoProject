@@ -156,10 +156,41 @@ A. React uses Recondiliation algorithm.( it is also know as React Fiber)
 ### useState()
 - whenever the state variable update - react re-render the component
 
+# ep6
+## monolith architecture
+-In older days, there used to be a single big application, so everything like APIs, SMS, Notification, UI, JSP pages
+etc used to be in same project,
+-suppose if we have to change one button, we need to deploy this whole project/application.
+it was such mess. This architecture was know as monolith
+
+## microservice architecture
+-Instead of having a one big project, we need used small different projects.
+-there are seperate projects. there seperation of concern or single responsibility is there.
+-the tools & languages use in a project, depends on the usecase.
+-all these projects are deployed in different parts but same domain name.
+
+## Hooks
+##### useEffect(callback function, dependency array) useEffect(()=>, [])
+- callback function means "this function is not called immedietly but called whenever useEffect wanted to be called
+  React will make sure that it is called in a specific time.
+- Whenever the component renders & re-renders/re-renders, first of all the code of the component will be called & after every render. it will be call the callback function, that pass inside useEffect()
+- There are 2 ways when component re-renders
+  1. state changes
+  2. props changes
+- useEffect will be called on every re-render, which is a badway. if we don't want to call it after every re-render,
+pass a dependenc array into it.
+ 
+## Shimmer UI
+
+## Conditional Rendering
+
 
 -------------------------
-# vs extension 
+#### vs extension 
 1. pretier code 
 2. bracket pair colorization toggler
 3. ESLint - helpfull for linkdin
 4. better comments 
+
+#### browser extension
+1. allow cors
