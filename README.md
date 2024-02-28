@@ -185,6 +185,9 @@ pass a dependenc array into it.
 ## Conditional Rendering
 
 
+# ep7
+
+
 -------------------------
 #### vs extension 
 1. pretier code 

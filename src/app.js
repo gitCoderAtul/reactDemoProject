@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import HeaderComponent from "./components/HeaderComponent"; 
 import BodyComponent from "./components/BodyComponent";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import AboutComponent from "./components/AboutComponent";
+import ContactComponent from "./components/ContactComponent";
+import { ErrorComponent } from "./components/ErrorComponent";
+import RestaurantMenu from "./components/RestaurantMenu";
   
 
     //internal css - create the object to call internal css
@@ -100,14 +105,57 @@ import BodyComponent from "./components/BodyComponent";
    const AppLayout = () =>{
     return(
         <div className="app">
-            <HeaderComponent></HeaderComponent>
-            <BodyComponent></BodyComponent>
+            <HeaderComponent></HeaderComponent> 
+            <Outlet></Outlet>
         </div>
     )
    }
+
+   const router = createBrowserRouter([
+    {
+        path:'/',
+        element:<AppLayout></AppLayout>,
+        children:[
+            {
+                path:'/',
+                element:<BodyComponent></BodyComponent>
+            },
+            {
+                path:'/about',
+                element:<AboutComponent></AboutComponent>
+            },
+            {
+                path:'/contact',
+                element: <ContactComponent></ContactComponent>
+            },
+            {
+                path:'/restaurants/:resId',
+                element: <RestaurantMenu></RestaurantMenu>
+            }
+        ],
+        errorElement:<ErrorComponent></ErrorComponent>
+    }
+   ])
+
+
+//    const router = createBrowserRouter([
+//     {
+//         path:'/',
+//         element:<BodyComponent></BodyComponent>
+//     },  {
+//         path:'/about',
+//         element:<AboutComponent></AboutComponent>
+//     },{
+//         path:'/contact',
+//         element:<ContactComponent></ContactComponent>
+//     }
+//    ]);
+   
     
+
     const root = ReactDOM.createRoot(document.getElementById('root'));
     // console.log(root);
 
-    root.render(<AppLayout />)
+    // root.render(<AppLayout />)
+    root.render(<RouterProvider router={router}></RouterProvider>)
  

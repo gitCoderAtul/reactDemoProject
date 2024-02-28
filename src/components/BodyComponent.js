@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import restList from "../utils/mockData";
 import ShimmerComponent from "./ShimmerComponent";
+import { Link } from "react-router-dom";
 
 export default function BodyComponent() {
   //
@@ -112,18 +113,19 @@ return listRestaurant.length == 0 ? (<ShimmerComponent></ShimmerComponent>) : (
               setFilterRestaurant(filteredList);
             }}
           >
-            {" "}
-            Top Rated Restaurant{" "}
+            {/* {" "}
+            Top Rated Restaurant{" "} */}
           </button>
         </div>
       </div>
       <div className="restaurantContainer">
         {/* restaurant card */}
         {filterRestaurant.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.info.id}
+          <Link to={'/restaurants/'+ restaurant.info.id} key={restaurant.info.id}  className="res-card" > 
+          <RestaurantCard 
             restData={restaurant}
           ></RestaurantCard>
+          </Link>
         ))}
 
         {/* <RestaurantCard name="KFC" cuisine="Burger, Fast Food"></RestaurantCard>

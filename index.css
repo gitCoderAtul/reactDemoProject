@@ -15,7 +15,7 @@ font-family: "Roboto", sans-serif; */
 }
 
  .restaurantContainer,.shimmer-container{ display: flex; flex-wrap: wrap;}
- .res-card{ transition: .2s all ease; margin:5px; padding: 5px; border:1px solid rgb(189, 189, 189);}
+ .res-card{ transition: .2s all ease; margin:5px; padding: 5px; border:1px solid rgb(189, 189, 189); color: rgb(117, 117, 117); text-decoration: none;}
  .res-card:hover{ box-shadow: 2px 5px 5px rgb(189, 189, 189,0.8); }
  .res-logo{ width:100%; height: 250px; object-fit: cover;}
  .res-card h3{margin-top: 10px; margin-bottom: 5px; padding: 0;}
@@ -116,5 +116,5 @@ font-family: "Roboto", sans-serif; */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .body,.shimmer-container{max-width: 1480px; margin: auto;}
-    .res-card,.shimmer-card{width:calc(25% - 24px) }
+     .res-card,.shimmer-card{width:calc(25% - 24px) }
  }
