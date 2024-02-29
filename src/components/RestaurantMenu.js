@@ -33,10 +33,10 @@ const RestaurantMenu = () =>{
     resInfo?.cards[0]?.card?.card?.info;
     // const{name} = json?.data?.cards[0]?.card?.card?.info;
 
-    const{itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-    console.log(itemCards);
-//    const{myitemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-//      console.log('new card ', myitemCards);
+    const{itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    console.log('card ',itemCards);
+    const{myitemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+       console.log('new card ', myitemCards);
     // https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2467218&lng=72.9759713&restaurantId=552383&catalog_qa=undefined&submitAction=ENTER
     return(
         <div>
@@ -56,8 +56,8 @@ const RestaurantMenu = () =>{
             </div> 
         <div className="Rest-title">
                 <h4>Restaurant title</h4>
-               {
-                    itemCards.map((res)=>(
+                 {
+                    itemCards.length > 0 && itemCards.map((res)=>(
                         <div key={res.card.info.id}>
                             <div>                            
                         <h5> {res.card.info.name}</h5>
@@ -68,7 +68,7 @@ const RestaurantMenu = () =>{
                         </div>
                         </div>
                     ))
-                }     
+                }      
                 <div>
                     <h5>Restaurant food name</h5>
                     <p></p>

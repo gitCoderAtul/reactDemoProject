@@ -10,42 +10,7 @@ export default function BodyComponent() {
   // local stater variable - super powerful variable
   const [searchText, setSearchText] = useState("");
 const [filterRestaurant,setFilterRestaurant] = useState([])
-  const [listRestaurant, setListRestaurant] = useState([]);
- 
-
- /* const searchHandleChange = function (event) {
-    console.log(event.target.value);
-    if(searchText != ''){
-      setSearchText(event.target.value);
-      console.log(setSearchText);
-    }else{
-      
-    }
-    
-  };
-  const searchHandleClick = function (event) {
-    const filteredList = listRestaurant.filter((res) =>
-      res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-    );
-    console.log("button click");
-    console.log(filteredList);
-    setListRestaurant(filteredList); 
-    //    if(searchText == ''){
-    //     console.log(empty);
-    //     const restList = listRestaurant.map((res) =>
-    //         console.log(res)
-    //     )
-    //       setListRestaurant(restList);
-    //    }else{
-    //     const filteredList = listRestaurant.filter((res) =>
-    //         res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-    //         )
-    //     console.log("button click");
-    //     console.log(filteredList);
-    //     setListRestaurant(filteredList);
-    //    }
-  };
-*/
+  const [listRestaurant, setListRestaurant] = useState([]); 
    
 //whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
   
@@ -113,8 +78,8 @@ return listRestaurant.length == 0 ? (<ShimmerComponent></ShimmerComponent>) : (
               setFilterRestaurant(filteredList);
             }}
           >
-            {/* {" "}
-            Top Rated Restaurant{" "} */}
+            {" "}
+            Top Rated Restaurant{" "}  
           </button>
         </div>
       </div>
@@ -126,21 +91,7 @@ return listRestaurant.length == 0 ? (<ShimmerComponent></ShimmerComponent>) : (
             restData={restaurant}
           ></RestaurantCard>
           </Link>
-        ))}
-
-        {/* <RestaurantCard name="KFC" cuisine="Burger, Fast Food"></RestaurantCard>
-                    <RestaurantCard name="Pizza hut" cuisine="Pizza, Fast Food"></RestaurantCard> */}
-
-        {/* <RestaurantCard restData={restObj} ></RestaurantCard> */}
-
-        {/*                    
-                    <RestaurantCard restData={restList[0]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[1]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[2]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[3]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[4]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[5]} ></RestaurantCard>
-                    <RestaurantCard restData={restList[6]} ></RestaurantCard> */}
+        ))} 
       </div>
     </div>
   );
