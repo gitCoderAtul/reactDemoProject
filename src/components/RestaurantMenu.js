@@ -2,30 +2,32 @@ import { useEffect, useState } from "react";
 import ShimmerComponent from "./ShimmerComponent";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constant";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () =>{
 
-    const [resInfo,setResInfo] = useState(null);
+    // const [resInfo,setResInfo] = useState(null); 
     const {resId} = useParams();
     console.log(resId);
 
-    // const resId= params;
+    const resInfo = useRestaurantMenu(resId);
 
-// const API = " https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2467218&lng=72.9759713&restaurantId=552383&catalog_qa=undefined&submitAction=ENTER";
+   /*
     useEffect(()=>{
         console.log('useEffect call');
         fetchData();        
     },[])
+
     const fetchData = async ()=>{
         const data = await fetch(MENU_API+ resId );        
         console.log(data);
-        const json = await data.json();
-
-        console.log('api json data ',json);
+        const json = await data.json(); 
+    //    console.log('api json data ',json);
     //    console.log(json?.data?.cards[0]?.card?.card?.info); 
-          setResInfo(json.data)
-
+          setResInfo(json.data); 
     };
+*/
+
     if(resInfo == null) return <ShimmerComponent></ShimmerComponent>;
     
     // console.log(resInfo?.cards[0]?.card?.card?.info);
@@ -33,11 +35,12 @@ const RestaurantMenu = () =>{
     resInfo?.cards[0]?.card?.card?.info;
     // const{name} = json?.data?.cards[0]?.card?.card?.info;
 
-    const{itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log('card ',itemCards);
-    const{myitemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
-       console.log('new card ', myitemCards);
-    // https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2467218&lng=72.9759713&restaurantId=552383&catalog_qa=undefined&submitAction=ENTER
+     const{itemCards} = 
+     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+     console.log('card ',itemCards);
+    // const{myCards} = cat?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+    //  console.log('new card ', myCards);
+   
     return(
         <div>
        

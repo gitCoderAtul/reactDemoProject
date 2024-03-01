@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import restList from "../utils/mockData";
 import ShimmerComponent from "./ShimmerComponent";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 export default function BodyComponent() {
   //
@@ -30,6 +31,9 @@ const fetchData = async () =>{
 
 }
 console.log('body render 1st');
+
+const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false) return <h1> Looks like you're offline !! Please check your internet connection</h1>;
 
 //conditional rendering
 if(listRestaurant.length == 0){

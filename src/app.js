@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, { Suspense, lazy } from "react"; 
 import ReactDOM from 'react-dom/client';
 import HeaderComponent from "./components/HeaderComponent"; 
 import BodyComponent from "./components/BodyComponent";
@@ -7,6 +7,8 @@ import AboutComponent from "./components/AboutComponent";
 import ContactComponent from "./components/ContactComponent";
 import { ErrorComponent } from "./components/ErrorComponent";
 import RestaurantMenu from "./components/RestaurantMenu";
+ 
+// import GroceryComponent from "./components/GroceryComponent";
   
 
     //internal css - create the object to call internal css
@@ -111,6 +113,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
     )
    }
 
+   const Grocery = lazy(()=> import('./components/GroceryComponent.js'))
+
    const router = createBrowserRouter([
     {
         path:'/',
@@ -127,6 +131,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
             {
                 path:'/contact',
                 element: <ContactComponent></ContactComponent>
+            },
+            {
+                path:'/grocery',
+                element: <Suspense fallback={<h1>Loading ....</h1>}> <Grocery/> </Suspense>
             },
             {
                 path:'/restaurants/:resId',
