@@ -1,7 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 
 export default function HeaderComponent() {
     // you can not change name useing normal js. js needs to refresh or reload.
@@ -11,6 +13,7 @@ export default function HeaderComponent() {
     // whenever the state variable will be change using the setBtnNameReact. React will re-render/refresh the header component and all the update the value there
   const [btnNameReact,setBtnNameReact] = useState('Login');
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext)
   // useEffect(()=>{
   //   console.log('render header');
   // },[btnNameReact])
@@ -18,22 +21,22 @@ export default function HeaderComponent() {
   
 
   return (
-    <div className="header">
+    <div className="header flex justify-between bg-gray-50 shadow mb-2">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+        <img className="logo w-32 p-2" src={LOGO_URL}></img>
       </div>
-      <div className="nav-item">
-        <ul>
+      <div className="nav-item flex items-center p-4">
+        <ul className="flex items-center">
         {/* <li><a href="/"> Home </a></li>
         <li><a href="/about"> About Us </a></li>
           <li><a href="/contact"> Contact Us </a></li> */}
-           <li>  Online Status : {onlineStatus ?  "Green":"Red"}</li>
-          <li> <Link to="/"> Home </Link></li>
-          <li> <Link to="/about"> About Us </Link></li>
-          <li> <Link to="/contact"> Contact Us </Link></li>
-          <li> <Link to="/grocery"> Grocery </Link></li>
-          <li>Cart</li>
-          <li>
+          <li className="px-2">  Online Status : {onlineStatus ?  "Green":"Red"}</li>
+          <li className="px-2"> <Link to="/"> Home </Link></li>
+          <li className="px-2"> <Link to="/about"> About Us </Link></li>
+          <li className="px-2"> <Link to="/contact"> Contact Us </Link></li>
+          <li className="px-2"> <Link to="/grocery"> Grocery </Link></li>
+          <li className="px-2">Cart</li>
+          <li className="px-2">
             <button className="login-btn" onClick={()=>{ 
               if(btnNameReact == 'Login'){
                 setBtnNameReact('logout')
@@ -46,6 +49,7 @@ export default function HeaderComponent() {
              
             }}> {btnNameReact} </button>
           </li>
+          <li className="font-medium"> {loggedInUser}   </li>
         </ul>
         
       </div>

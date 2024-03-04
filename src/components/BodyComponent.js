@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscountLabel, withDiscountLabel } from "./RestaurantCard";
 import restList from "../utils/mockData";
 import ShimmerComponent from "./ShimmerComponent";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+ 
 export default function BodyComponent() {
   //
   //It maintained the state of component or state of function or state of the variable
@@ -12,6 +12,7 @@ export default function BodyComponent() {
   const [searchText, setSearchText] = useState("");
 const [filterRestaurant,setFilterRestaurant] = useState([])
   const [listRestaurant, setListRestaurant] = useState([]); 
+  const RestaurantCardDiscount = withDiscountLabel(RestaurantCard)
    
 //whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
   
@@ -45,9 +46,9 @@ if(listRestaurant.length == 0){
 //ternary operator
 return listRestaurant.length == 0 ? (<ShimmerComponent></ShimmerComponent>) : (
 //   return (
-    <div className="body">
-      <div className="search">
-        <input
+    <div className="body flex flex-col flex-wrap mx-auto max-w-[1280px]">
+      <div className="search flex  my-5">
+        <input className="border border-solid border-gray-400 rounded-[5px]"
           type="text"
           placeholder="Search Box"
           value={searchText}
@@ -87,13 +88,19 @@ return listRestaurant.length == 0 ? (<ShimmerComponent></ShimmerComponent>) : (
           </button>
         </div>
       </div>
-      <div className="restaurantContainer">
+      <div className="restaurantContainer flex flex-wrap">
         {/* restaurant card */}
         {filterRestaurant.map((restaurant) => (
-          <Link to={'/restaurants/'+ restaurant.info.id} key={restaurant.info.id}  className="res-card" > 
-          <RestaurantCard 
-            restData={restaurant}
-          ></RestaurantCard>
+          <Link to={'/restaurants/'+ restaurant.info.id} key={restaurant.info.id}  className="res-card flex w-[24%] max-lg:w-[49%] max-sm:w-[99%] border border-solid border-gray-200 rounded-sm m-1 hover:cursor-pointer" > 
+          {/* discount card */}
+          { 
+              (restaurant.info.aggregatedDiscountInfoV3) ?
+               ( <RestaurantCardDiscount restData={restaurant}></RestaurantCardDiscount>) : (<RestaurantCard 
+                  restData={restaurant} ></RestaurantCard>)   
+          }
+          
+          {/* <RestaurantCard 
+                  restData={restaurant} ></RestaurantCard> */}
           </Link>
         ))} 
       </div>

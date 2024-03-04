@@ -187,7 +187,10 @@ pass a dependenc array into it.
 
 # ep7
 
-
+## props drilling
+## control & uncontrol component
+## state lift up
+## useContext
 -------------------------
 #### vs extension 
 1. pretier code 

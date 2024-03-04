@@ -1,7 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* font-family: "Open Sans", sans-serif; 
-font-family: "Roboto", sans-serif; */
- body{    font-family: "Open Sans", sans-serif; 
+font-family: "Roboto", sans-serif; */ 
+
+body{    font-family: "Open Sans", sans-serif; 
  }
+  /* 
  .header{display:flex; justify-content: space-between; align-items: center; padding:  0 20px;}
  .logo{width: 150px;}
  .nav-item >ul{ display: flex; list-style-type: none; align-items: center;}
@@ -92,29 +98,24 @@ font-family: "Roboto", sans-serif; */
 .m-t-24 {
     margin-top: 24px;
 }
-
-/* Extra small devices (phones, 600px and down) */
+ 
 @media only screen and (max-width: 600px) { 
     .body,.shimmer-container{max-width: 100%; margin: auto;}
     .res-card,.shimmer-card{width:50%}
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
+} 
 @media only screen and (min-width: 600px) {
     .body,.shimmer-container{max-width: 768px; margin: auto;}
     .res-card,.shimmer-card{width:50%}
-}
-/* Medium devices (landscape tablets, 768px and up) */
+} 
 @media only screen and (min-width: 768px) { 
     .body,.shimmer-container{max-width: 992px; margin: auto;}
     .res-card,.shimmer-card{width:50%}
-}
-/* Large devices (laptops/desktops, 992px and up) */
+} 
 @media only screen and (min-width: 992px) {
     .body,.shimmer-container{max-width: 1080px; margin: auto;}
     .res-card,.shimmer-card{width:25%}
- }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+ } 
 @media only screen and (min-width: 1200px) {
     .body,.shimmer-container{max-width: 1480px; margin: auto;}
      .res-card,.shimmer-card{width:calc(25% - 24px) }
- }
+ } */
