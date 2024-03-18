@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constant";
+import { addItem } from "../Redux/reducer/cartSlice";
+ 
 
 const ItemsList = ({items}) =>{
     console.log('item list',items);
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        dispatch(addItem(item))
+    }
     return(
         <div>
             {
@@ -18,7 +26,7 @@ const ItemsList = ({items}) =>{
                             </div>
                         <div className="shadow-md relative">  
                               <img className="min-w-[160px] h-[120px] rounded-md object-cover" src={(CDN_URL+ undefined) ? (CDN_URL+ item.card.info.imageId) : ('https://www.flaticon.com/free-icon/bibimbap_2276931?term=food&page=1&position=6&origin=tag&related_id=2276931')}></img>
-                                <button className=" w-[100px] py-2 px-4 bg-white shadow absolute -bottom-4 rounded-md -translate-x-2/4 left-2/4 ">ADD + </button>
+                                <button className=" w-[100px] py-2 px-4 bg-white shadow absolute -bottom-4 rounded-md -translate-x-2/4 left-2/4 " onClick={() => {handleAddItem(item)}}>ADD + </button>
                         </div>
                         </div>
 

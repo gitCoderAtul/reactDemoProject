@@ -4,8 +4,11 @@ import restList from "../utils/mockData";
 import ShimmerComponent from "./ShimmerComponent";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import LocationContext from "../utils/LocationContext";
  
 export default function BodyComponent() {
+  
+console.log('location context', LocationContext);
   //
   //It maintained the state of component or state of function or state of the variable
   // local stater variable - super powerful variable
@@ -25,7 +28,7 @@ const fetchData = async () =>{
     const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2467218&lng=72.9759713&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
     const json = await data.json();
     console.log(json);
-    console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     //optional chaining
     setListRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setFilterRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)

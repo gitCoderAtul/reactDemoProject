@@ -8,12 +8,12 @@ import ContactComponent from "./components/ContactComponent";
 import { ErrorComponent } from "./components/ErrorComponent";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext.js";
+import { Provider } from "react-redux";
+import appstore from "./Redux/store.js";
+import Cart from "./components/Cart.js";
  
-
-
 // import GroceryComponent from "./components/GroceryComponent";
-  
-
+   
     //internal css - create the object to call internal css
     // const styleCard = {
     //     backgroundColor: "#fdfdfd",
@@ -104,11 +104,9 @@ import UserContext from "./utils/UserContext.js";
     //         }
     //       }
     // }
-
-   
-
+ 
    const AppLayout = () =>{
-    const [userName,setUserName] = useState();
+    const [userName,setUserName] = useState(); 
 useEffect(()=>{
     //make an api call and send username and password
     const data = {
@@ -117,12 +115,14 @@ useEffect(()=>{
     setUserName(data.name)
 },[])
     return(
-        <UserContext.Provider value={{loggedInUser: userName}}>
+        <Provider store={appstore}>
+        <UserContext.Provider  value={{loggedInUser: userName }}>
         <div className="app">
             <HeaderComponent></HeaderComponent> 
             <Outlet></Outlet>
         </div>
         </UserContext.Provider>
+        </Provider>
     )
    }
 
@@ -144,6 +144,10 @@ useEffect(()=>{
             {
                 path:'/contact',
                 element: <ContactComponent></ContactComponent>
+            },
+            {
+                path:'/cart',
+                element: <Cart></Cart>
             },
             {
                 path:'/grocery',

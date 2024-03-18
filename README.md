@@ -1,6 +1,6 @@
  
 
- # parcel 
+ ## parcel 
  ( https://parceljs.org/ )
  1.Created Dev Build
  2.Created Local server
@@ -26,7 +26,7 @@
         Remove the entry point
         it will automatically generate entry point as well production ready code and file.
 
-# browerslist 
+## browerslist 
 ( https://github.com/browserslist/browserslist or )
     how to make old or latest browser for app compatible ?
     Ans - you have to tell your browser what all browser should your app be supported in.
@@ -76,7 +76,7 @@ ans.
 -   who is transpiling ? ==> parcel but parcel is not doing itself
                             Babel(package) is converting into code that react/browser understand
 
-# Babel
+## Babel
 - JS compiler (also call transpiler)
 - babel job is to transpiled or convert JSX to js code/react code that understand browser
 JSX ==> Babel ==> convert code that js engine understand
@@ -87,7 +87,7 @@ ans. jsx (transpiled or convert into )==> React.createElement (created the ) ==>
 -   In JSX -> wrape multiline of code into () paranthesis bcoz babel need to understand.
 
 -------------------------
-# React component
+## React component
 1. functional comp
 2. class comp
 
@@ -95,7 +95,8 @@ ans. jsx (transpiled or convert into )==> React.createElement (created the ) ==>
 - function name should in CapitalLetter HeadingComponent
 - functional component is a normal js function which return some piece of code/JSX element and react element
  
-<!-- const HeadingComponent = () => {
+ ```jsx
+ const HeadingComponent = () => {
     return <h1>Hello JSX</h1>;
 }
 const HeadingComponent = () => {
@@ -104,7 +105,9 @@ const HeadingComponent = () => {
             <h1>Hello JSX</h1>;
         <>
     ) 
-} -->
+} 
+```
+
 Q. how to render functional component inside the root?
 Q. what is component composition ?
 ans. put one component inside the another component or one component  can refers to other component.
@@ -113,7 +116,7 @@ ans. put one component inside the another component or one component  can refers
 - u can put react element inside component ---- u can put react element inside other react element 
 
 
-# Two Type of import export
+## Two Type of import export
 1. Default export/import
 
 export default Component;
@@ -124,7 +127,7 @@ import Component from "path"
 export const Component;
 import {Component} from "path"
 
-# React Hook
+## React Hook
 - normal js utility function 
 - 2 imp hooks 
     - useState() - superpowerfull react variable
